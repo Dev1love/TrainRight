@@ -1,0 +1,168 @@
+{
+  "users": [
+    {
+      "user_id": "7c3b8bed-c2df-46ed-80ca-4f8483d394db",
+      "name": "Test User",
+      "email": "test@example.com",
+      "password_hash": "$2b$10$NTkca4/UGui5q5zV1FgxwuPgc.ilAKQjTz0fL/0cfp92s9FPICRAm",
+      "role": "trainer",
+      "created_at": "2024-10-29T06:47:20.240Z",
+      "updated_at": "2024-10-29T06:47:20.240Z"
+    },
+    {
+      "user_id": "f39dc9ce-dad1-4789-a647-da47e51a2a79",
+      "name": "John Trainer",
+      "email": "trainer@example.com",
+      "password_hash": "$2b$10$kxauaUfmhdQoLRVnSchN/.Rj2REnJz8EmioKnKrigGWgtN42gz8Em",
+      "role": "trainer",
+      "created_at": "2024-10-29T06:53:09.744Z",
+      "updated_at": "2024-10-29T06:53:09.744Z"
+    },
+    {
+      "user_id": "71ab1acf-f656-4324-bb13-b936be3b235b",
+      "name": "Alice Client",
+      "email": "client@example.com",
+      "password_hash": "$2b$10$kxauaUfmhdQoLRVnSchN/.Rj2REnJz8EmioKnKrigGWgtN42gz8Em",
+      "role": "client",
+      "created_at": "2024-10-29T06:53:09.823Z",
+      "updated_at": "2024-10-29T06:53:09.823Z"
+    },
+    {
+      "user_id": "825b96c7-fcc9-4fe3-b580-c8b3a2af6dc1",
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password_hash": "$2b$10$kxauaUfmhdQoLRVnSchN/.Rj2REnJz8EmioKnKrigGWgtN42gz8Em",
+      "role": "admin",
+      "created_at": "2024-10-29T06:53:09.826Z",
+      "updated_at": "2024-10-29T06:53:09.826Z"
+    }
+  ],
+  "exercises": [
+    {
+      "exercise_id": "af6a2318-db47-482d-8fd9-d900a190f06d",
+      "name": "Push-ups",
+      "description": "Basic push-up movement",
+      "default_rest_time": 60,
+      "video_url": "https://example.com/pushup.mp4"
+    },
+    {
+      "exercise_id": "7c4cb371-d3a5-4e0e-b4bc-3b4ef759e877",
+      "name": "Squats",
+      "description": "Basic squat movement",
+      "default_rest_time": 90,
+      "video_url": "https://example.com/squat.mp4"
+    },
+    {
+      "exercise_id": "15166140-cc06-431a-bd66-1664da4d7d52",
+      "name": "Pull-ups",
+      "description": "Basic pull-up movement",
+      "default_rest_time": 120,
+      "video_url": "https://example.com/pullup.mp4"
+    }
+  ],
+  "trainingPlans": [
+    {
+      "plan_id": "71073e49-56a5-4dd7-b3db-eef21a84a729",
+      "plan_name": "string",
+      "description": "string",
+      "created_at": "2024-10-29T06:50:18.512Z",
+      "updated_at": "2024-10-29T06:50:18.512Z",
+      "trainer": {
+        "user_id": "7c3b8bed-c2df-46ed-80ca-4f8483d394db",
+        "name": "Test User",
+        "email": "test@example.com",
+        "password_hash": "$2b$10$NTkca4/UGui5q5zV1FgxwuPgc.ilAKQjTz0fL/0cfp92s9FPICRAm",
+        "role": "trainer",
+        "created_at": "2024-10-29T06:47:20.240Z",
+        "updated_at": "2024-10-29T06:47:20.240Z"
+      }
+    },
+    {
+      "plan_id": "aeba6a6e-802a-4683-9d5e-eebfea91119e",
+      "plan_name": "Beginner Workout Plan",
+      "description": "A basic workout plan for beginners",
+      "created_at": "2024-10-29T06:53:09.836Z",
+      "updated_at": "2024-10-29T06:53:09.836Z",
+      "trainer": {
+        "user_id": "f39dc9ce-dad1-4789-a647-da47e51a2a79",
+        "name": "John Trainer",
+        "email": "trainer@example.com",
+        "password_hash": "$2b$10$kxauaUfmhdQoLRVnSchN/.Rj2REnJz8EmioKnKrigGWgtN42gz8Em",
+        "role": "trainer",
+        "created_at": "2024-10-29T06:53:09.744Z",
+        "updated_at": "2024-10-29T06:53:09.744Z"
+      }
+    }
+  ],
+  "planExercises": [
+    {
+      "plan_exercise_id": "6d5d58f7-cb29-4a56-b31f-897e0c8c12ae",
+      "order": 1,
+      "sets": 3,
+      "reps": 10,
+      "weight_recommendation": "Bodyweight",
+      "plan": {
+        "plan_id": "aeba6a6e-802a-4683-9d5e-eebfea91119e",
+        "plan_name": "Beginner Workout Plan",
+        "description": "A basic workout plan for beginners",
+        "created_at": "2024-10-29T06:53:09.836Z",
+        "updated_at": "2024-10-29T06:53:09.836Z"
+      },
+      "exercise": {
+        "exercise_id": "af6a2318-db47-482d-8fd9-d900a190f06d",
+        "name": "Push-ups",
+        "description": "Basic push-up movement",
+        "default_rest_time": 60,
+        "video_url": "https://example.com/pushup.mp4"
+      }
+    },
+    {
+      "plan_exercise_id": "6de3c56b-334d-4aec-8679-73dd687fb016",
+      "order": 2,
+      "sets": 3,
+      "reps": 15,
+      "weight_recommendation": "Bodyweight",
+      "plan": {
+        "plan_id": "aeba6a6e-802a-4683-9d5e-eebfea91119e",
+        "plan_name": "Beginner Workout Plan",
+        "description": "A basic workout plan for beginners",
+        "created_at": "2024-10-29T06:53:09.836Z",
+        "updated_at": "2024-10-29T06:53:09.836Z"
+      },
+      "exercise": {
+        "exercise_id": "7c4cb371-d3a5-4e0e-b4bc-3b4ef759e877",
+        "name": "Squats",
+        "description": "Basic squat movement",
+        "default_rest_time": 90,
+        "video_url": "https://example.com/squat.mp4"
+      }
+    },
+    {
+      "plan_exercise_id": "4acbb814-95f5-492d-b874-874a0194a16b",
+      "order": 3,
+      "sets": 3,
+      "reps": 5,
+      "weight_recommendation": "Bodyweight",
+      "plan": {
+        "plan_id": "aeba6a6e-802a-4683-9d5e-eebfea91119e",
+        "plan_name": "Beginner Workout Plan",
+        "description": "A basic workout plan for beginners",
+        "created_at": "2024-10-29T06:53:09.836Z",
+        "updated_at": "2024-10-29T06:53:09.836Z"
+      },
+      "exercise": {
+        "exercise_id": "15166140-cc06-431a-bd66-1664da4d7d52",
+        "name": "Pull-ups",
+        "description": "Basic pull-up movement",
+        "default_rest_time": 120,
+        "video_url": "https://example.com/pullup.mp4"
+      }
+    }
+  ],
+  "trainerClientRelationships": [],
+  "clientWorkouts": [],
+  "workoutProgress": [],
+  "feedback": [],
+  "timestamp": "2024-10-29T06:57:21.628Z",
+  "version": "1.0"
+}
