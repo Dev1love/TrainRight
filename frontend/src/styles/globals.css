@@ -1,0 +1,21 @@
+/* Add or update these CSS rules */
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Prevent font blurriness on sub-pixel rendering */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    /* Prevent blurry text in form elements */
+    transform: translateZ(0);
+} 

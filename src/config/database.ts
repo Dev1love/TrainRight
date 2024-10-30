@@ -10,7 +10,7 @@ import { Feedback } from '../models/Feedback';
 
 // More detailed logging
 const dbConfig: DataSourceOptions = {
-  type: 'postgres' as const,
+  type: 'postgres' as const,  // Explicitly specify the type
   host: process.env.DB_HOST || 'db',
   port: parseInt(process.env.DB_PORT || '5432'),
   username: process.env.POSTGRES_USER || 'user',

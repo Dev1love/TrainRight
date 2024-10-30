@@ -1,21 +1,49 @@
 version: '3.8'
 
 services:
-  app:
-    build: .
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "8000:8000"
     environment:
-      NODE_ENV: production
-      DB_HOST: db
-      DB_PORT: 5432
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: trainright
+      - NODE_ENV=development
+      - PORT=8000
+      - DB_HOST=db
+      - DB_PORT=5432
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=trainright
     depends_on:
       db:
         condition: service_healthy
-    restart: always
+    networks:
+      - trainright-network
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    command: sh -c "chmod +x ./scripts/startup.sh && ./scripts/startup.sh"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://backend:8000/api
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=your-development-secret
+    depends_on:
+      - backend
+    networks:
+      - trainright-network
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
 
   db:
     image: postgres:13
@@ -33,6 +61,12 @@ services:
       start_period: 10s
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - trainright-network
 
 volumes:
   postgres_data:
+
+networks:
+  trainright-network:
+    driver: bridge
